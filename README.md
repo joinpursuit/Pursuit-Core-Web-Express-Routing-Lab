@@ -1,23 +1,24 @@
 # Express-Routing-Lab
 
-## Calculator API - Four Routes
+In this lab you will get to build a small server that can serve us as calculator for simple math operations.
+
+## 1. Calculator API - Four Routes
 
 ### Backend
 
-Create and express server that works as a basic calculator API.
+In a file `calculatorApi1.js`, create and express server that works as a basic calculator API.
 
-* Create four routes, where each starts with add/sub/mul/div. Each of the routes will then accept two number parameters.
+* Create four routes/endpoints, `/add`, `/sub`, `/mul`, `/div`. Each of the routes will then accept two numbers as [route parameters](https://github.com/joinpursuit/Pursuit-Core-Web/tree/master/node/intro_to_express_and_routing#7-reading-parameters). 
 
-Here is one route in your app:
+  Here is what a route in your app would look like: `/add/:num1/:num2`
 
-`/add/:num1/:num2`
 
 * In each route, convert the numbers to integers using `parseInt`.
 * Respond to each request with an object that contains both numbers and the result.
 
-For example, if the users navigates to `http://localhost:8000/add/2/4`, the response should be:
+  For example, if the users navigates to `http://localhost:8000/add/2/4`, the response should be JSON like:
 
-`{num1: 2, num2: 4, result: 6}`
+  `{"num1": 2, "num2": 4, "result": 6}`
 
 * If either of the parameters is not a number, respond with an string like "numbers only".
 
@@ -29,12 +30,20 @@ Build a frontend where a user can interact with your calculator server.  It shou
 
 ![calculatorGif.gif](./calculatorGif.gif)
 
-## Calculator API - One Route
+## 2. Calculator API - One Route
 
-Convert your calculator API to take the operator as a parameter as well. Now you will only need one route. If the operator is not valid, send an appropriate response like `"the operator is not supported"`.
+In a file `calculatorApi2.js`, convert your calculator API to take the operator as a route parameter as well. Now you will only need one route. If the operator is not valid, send an appropriate response like `"the operator is not supported"`.
+
+<details>
+  <summary>Hints</summary>
+
+  * Since you will have only one route or endpoint what would that be?
+  * This calculator server/API should work exactly the same as your previous for the basic operations. But you should see that your code is much shorter.
+  * How could you make the `operator` portion of the URL be a parameter itself? So that it can be captured/seen in `req.params`
+</details>
 
 
-## Challenge - Base Conversion API
+## 3. Challenge - Base Conversion API
 
 Create an express server that converts numbers between three bases: decimal, binary, and hexadecimal.
 
