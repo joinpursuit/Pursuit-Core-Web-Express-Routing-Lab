@@ -46,7 +46,7 @@ const checkAndCalculate = (req, res) => {
     } else if (operation === 'sub') {
         result['answer'] = sub(num1, num2);
     } else if (operation === 'mul') {
-        result['answer'] =  mul(num1, num2);
+        result['answer'] = mul(num1, num2);
     } else if (operation === 'div') {
         result['answer'] = div(num1, num2);
     }
