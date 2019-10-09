@@ -71,3 +71,10 @@ myApp.get('/div/:num1/:num2', (request, response) => {
     
     response.json(data);
 })
+
+myApp.get('*', (request, response) => {
+    let data = {
+        result: `Interesting endpoint, unfortunately, there is nothing in here\nBESIDE THIS, YOU'RE A GENIUS, how did you get here !?!?`
+    }
+    response.json(data);
+})

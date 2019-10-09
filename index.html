@@ -11,19 +11,42 @@
 </head>
 
 <body>
-    <h1>Calculator</h1>
-    <hr>
-
-    <input id="num1" type="number">
-    <select>
-        <option value="sum">+</option>
-        <option value="sub">-</option>
-        <option value="mul">x</option>
-        <option value="div">÷</option>
-    </select>
-    <input id="num2" type="number"> = 
-    <span>???</span>
+    
+    <div>
+            <h1>Calculator</h1>
+        
+            <label id="switch">
+                <input id="checkBox" type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            <span id="server">Using SERVER-1</span>
+            <hr>
+        
+            <input id="num1" type="number">
+            <select>
+                <option value="sum">+</option>
+                <option value="sub">-</option>
+                <option value="mul">x</option>
+                <option value="div">÷</option>
+            </select>
+            <input id="num2" type="number"> = 
+            <span id="result">???</span>
+            <br>
+            <button id="calculate">Calculate</button>
+    </div>
     <br>
-    <button id="calculate">Calculate</button>
+    <hr>
+    <hr>
+    <div>
+        <h1>Converting Numbers</h1>
+        <input id="num" type="text">
+        <select id="baseSelection">
+            <option value="none">Select a base</option>
+            <option value="bin">Binary Base</option>
+            <option value="dec">Decimal Base</option>
+            <option value="hex">Hexadecimal Base</option>
+        </select>
+        <span id="conversion"></span>
+    </div>
 </body>
 </html>
