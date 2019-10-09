@@ -1,21 +1,18 @@
 const express = require('express')
-//const cors = require('cors')
+const cors = require('cors')
 
 const app = express()
 const port = 8000;
 
-//app.use(cors());
+app.use(cors());
 
 app.get("/", (req, res) => {
-    res.send("Welcome Calculator API")
+    res.sendFile(__dirname + '/calculator.html')
 })
 
 app.get("/add/:num1/:num2",(req,res) =>{
-    // stored the number of the first paramater
     let number1 = req.params.num1 
-    // stored the number of the second paramater
     let number2 = req.params.num2 
-    // use parseInt function to turn string into number 
     let result = parseInt(number1) + parseInt(number2)
     let sum = {'num1': number1, 'num2': number2,'answer': result}
     res.json(sum)
@@ -45,9 +42,7 @@ app.get("/add/:num1/:num2",(req,res) =>{
     res.json(quotient)
   })
 
-//handle 404 status and app.use is for any method GET, PUSH, POST and * is a wildcard that return any endpoint that is considered invalid
-app.use("*", (req, res) =>{
-    console.log(req)
+app.use("/*", (req, res) =>{
     res.status(404);
     res.send('This was not found')
 })
