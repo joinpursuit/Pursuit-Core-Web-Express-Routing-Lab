@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    button {
+      display: block;
+      margin: 10px;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelector("button").addEventListener("click", doMath)
+    })
+
+    function doMath() {
+      let nums = document.querySelectorAll("input")
+      let sign = document.querySelector("select").value
+
+      fetch(`http://localhost:8080/${nums[0].value}/${sign}/${nums[1].value}`)
+        .then(res => res.json())
+        .then(res => {
+          results(res)
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }
+
+    function results(data) {
+      let answer = document.querySelector("span")
+      answer.innerText = " = " + data.result
+
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Calculator</h1>
+  <input type="number" />
+  <select>
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="%2F">/</option>
+  </select>
+  <input type="number" />
+  <span> = ???</span>
+  <button>Calculate</button>
+</body>
+
+</html>
