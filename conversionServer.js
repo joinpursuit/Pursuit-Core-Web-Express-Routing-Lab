@@ -15,14 +15,15 @@ app.get('/:value', (req, res) => {
     result.original.value = req.params.value;
     result.original.base = baseName('bin');
     result['conversions'] = conversion(result.original.value, result.original.base);
-    
+
     console.log('Default Binary Conversion');
     res.status(200).json(result);
 })
 
 app.get('/:value/:base', (req, res) => {
+    const base = req.params.base;
     result.original.value = req.params.value;
-    result.original.base = baseName(req.params.base);
+    result.original.base = baseName(base);
 
     if (base === 'bin') {
         console.log('Binary Conversion');
