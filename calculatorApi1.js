@@ -8,6 +8,8 @@ app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`)
 })
 
+app.use(cors());
+
 app.get("/add/:num1/:num2", (req, res) => {
     let num1 = req.params.num1;
     let num2 = req.params.num2;
@@ -72,5 +74,3 @@ app.use("*", (req, res) => {
     res.status(404)
     res.send("Welcome to this basic calculator API! Please use the routes ADD, SUB, MUL, or DIV - and pass through two parameters to return the desired result!")
 })
-
-app.use(cors());
