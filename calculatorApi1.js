@@ -69,20 +69,23 @@ app.get(`/div/:num1/:num2`, (req, res) => {
 
 })
 
-// app.get(`/:${operation()}`, (req, res) => {
+// app.get(`/:operator/:num1/num2}`, (req, res) => {
 //     res.status(200)
 
-//     let num1
+//     let operator = req.params.operator;
+//     let num1 = parseInt(req.params.num1);
+//     let num2 = parseInt(req.params.num2);
+//     let result
 
 //     if (isNaN(num1) || isNaN(num2)) res.send('Numbers only')
 
 //     let operations = {
-//         add: (num1, num2) => (parseInt(num1) + parseInt(num2)),
-//         sub: (num1, num2) => (parseInt(num1) - parseInt(num2)),
-//         mul: (num1, num2) => (parseInt(num1) * parseInt(num2)),
-//         div: (num1, num2) => (parseInt(num1) / parseInt(num2)),
+//         'add': result = parseInt(num1) + parseInt(num2),
+//         'sub': result = parseInt(num1) + parseInt(num2),
+//         'mul': result = parseInt(num1) + parseInt(num2),
+//         'div': result = parseInt(num1) + parseInt(num2),
 //     }
-//     res.send(operations)
+//     res.send(result)
 // })
 
 // let data =
