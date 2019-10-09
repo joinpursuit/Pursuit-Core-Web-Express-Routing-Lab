@@ -20,21 +20,57 @@ app.get("/", (request, response) => {
     response.send("Testing math server");
 })
 
-// app.get("/add/:num1/:num2", (request, response) => {
-    
-// })
+app.get("/add/:num1/:num2", (request, response) => {
+    let num1 = request.params.num1;
+    let num2 = request.params.num2;
+    let result = add(parseInt(num1), parseInt(num2));
 
-// app.get("/subtract/:num1/:num2", (request, response) => {
-    
-// })
+    let data = {
+        num1: num1,
+        num2: num2,
+        result: result
+    }
+    response.json(data)
+})
 
-// app.get("/multiply/:num1/:num2", (request, response) => {
-    
-// })
+app.get("/subtract/:num1/:num2", (request, response) => {
+    let num1 = request.params.num1;
+    let num2 = request.params.num2;
+    let result = subtract(parseInt(num1), parseInt(num2));
 
-// app.get("/divide/:num1/:num2", (request, response) => {
-    
-// })
+    let data = {
+        num1: num1,
+        num2: num2,
+        result: result
+    }
+    response.json(data)
+})
+
+app.get("/multiply/:num1/:num2", (request, response) => {
+    let num1 = request.params.num1;
+    let num2 = request.params.num2;
+    let result = multiply(parseInt(num1), parseInt(num2));
+
+    let data = {
+        num1: num1,
+        num2: num2,
+        result: result
+    }
+    response.json(data)
+})
+
+app.get("/divide/:num1/:num2", (request, response) => {
+    let num1 = request.params.num1;
+    let num2 = request.params.num2;
+    let result = divide(parseInt(num1), parseInt(num2));
+
+    let data = {
+        num1: num1,
+        num2: num2,
+        result: result
+    }
+    response.json(data)
+})
 
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`)
