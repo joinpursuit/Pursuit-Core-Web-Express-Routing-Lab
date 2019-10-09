@@ -1,4 +1,4 @@
-const sum = (a, b) => {
+const add = (a, b) => {
     return a + b;
     }
 const mul = (a, b)=> {
@@ -12,8 +12,8 @@ const sub = (a,b) => {
 }
 
     module.exports = {
-        sum,
-        multiply,
-        divide,
+        add,
+        mul,
+        div,
         sub
     }
