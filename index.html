@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator API</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h1>Calculator</h1>
+        <div id="math-container">
+            <input type="number" name="math" id="input1">
+            <select name="math" id="select">
+                <option value="add">+</option>
+                <option value="sub">-</option>
+                <option value="mul">x</option>
+                <option value="div">/</option>
+            </select>
+            <input type="number" name="math" id="input2">
+            <span id="answer-box"> = <span id="answer">❓</span></span>
+        </div>
+        <button id="btn-calc">Calculate</button>
+    </div>
+</body>
+</html>
