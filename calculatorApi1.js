@@ -51,7 +51,7 @@ app.get("/mul/:num1/:num2", (req, res) => {
     {
     num1: parseInt(req.params.num1),
     num2: parseInt(req.params.num2),
-    sum: parseInt(req.params.num1) * parseInt(req.params.num2),
+    mul: parseInt(req.params.num1) * parseInt(req.params.num2),
     };
 
     res.set('Content-Type', 'application/json')
@@ -68,7 +68,7 @@ app.get("/div/:num1/:num2", (req, res) => {
     {
     num1: parseInt(req.params.num1),
     num2: parseInt(req.params.num2),
-    sum: parseInt(req.params.num1) / parseInt(req.params.num2),
+    div: parseInt(req.params.num1) / parseInt(req.params.num2),
     };
 
     res.set('Content-Type', 'application/json')

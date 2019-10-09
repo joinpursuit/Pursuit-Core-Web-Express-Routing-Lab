@@ -23,6 +23,24 @@ async function requestAddApi() {
     }
 
     const myURL = `http://localhost:1337/${currentOper}/${num1}/${num2}`
-    const resp = await axios.get(myURL)    
-    console.log(resp.data.sum)
+    const resp = await axios.get(myURL)  
+    
+    let currentResult = document.querySelector('#myResult');
+
+    let newResult = document.createElement('p');
+    newResult.innerText = `= ${resp.data['currentOper']}`;
+    if(myOperator === "+") {
+        newResult.innerText = `= ${resp.data.sum}`;
+    } else if(myOperator === "-") {
+        newResult.innerText = `= ${resp.data.sub}`;
+    } else if(myOperator === "*") {
+        newResult.innerText = `= ${resp.data.mul}`;
+    } else if(myOperator === "/") {
+        newResult.innerText = `= ${resp.data.div}`;
+    }
+    newResult.id = 'myResult';
+
+    currentResult.parentNode.replaceChild(newResult, currentResult);
+
+    console.log(resp.data)
 }
