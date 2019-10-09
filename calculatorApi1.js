@@ -1,8 +1,16 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const math = require("./math.js");
+
 const port = 8000;
+
+const add = (a, b) => a + b;
+
+const subtract = (a, b) => a - b;
+
+const multiply = (a, b) => a * b;
+
+const divide = (a, b) => a / b;
 
 app.use(cors());
 
@@ -31,3 +39,4 @@ app.get("/", (request, response) => {
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`)
 })
+
