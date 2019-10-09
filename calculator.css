@@ -1,0 +1,21 @@
+body{
+	background-color: blue;
+	display: flex;
+	flex-direction: column;
+}
+
+h1, h2 {
+	color: whitesmoke;
+	text-align: center;
+}
+
+input {
+	margin: 30px;
+}
+.main {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
