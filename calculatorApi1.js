@@ -38,7 +38,6 @@ app.get("/sub/:num1/:num2", (req, res) => {
 
     res.set('Content-Type', 'application/json')
     res.status(200);
-    console.log(subtraction.num1)
     if(isNaN(subtraction.num1) || isNaN(subtraction.num2)) {
         res.send("Numbers only!");
     } else {
@@ -57,7 +56,6 @@ app.get("/mul/:num1/:num2", (req, res) => {
 
     res.set('Content-Type', 'application/json')
     res.status(200);
-    console.log(multiplication.num1)
     if(isNaN(multiplication.num1) || isNaN(multiplication.num2)) {
         res.send("Numbers only!");
     } else {
@@ -75,7 +73,6 @@ app.get("/div/:num1/:num2", (req, res) => {
 
     res.set('Content-Type', 'application/json')
     res.status(200);
-    console.log(division.num1)
     if(isNaN(division.num1) || isNaN(division.num2)) {
         res.send("Numbers only!");
     } else {
