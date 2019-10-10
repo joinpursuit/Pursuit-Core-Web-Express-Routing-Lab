@@ -1,15 +1,19 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const port = 8080;
+const port = 3194;
 app.use(cors());
 
 let mathModule = require('./mathMod.js');
 app.listen(port, () => {
-    console.log('server is listen to port 8080');
+    console.log('server is listen to port 3194');
 });
-app.get('/', (request, response) => {
 
+// app.use(express.static(__dirname))
+
+app.get('/', (request, response) => {
+    response.send('This is my express server homepage @ /');
+    // response.sendFile(__dirname + '/calculator.html')
 })
 
 app.get('/add/:num1/:num2', (request, response) => {
@@ -57,7 +61,7 @@ app.get('/div/:num1/:num2', (request, response) => {
     let data = {
         'num1': request.params.num1,
         'num2': request.params.num2,
-        "result": result
+        "result": result   
     }
     response.json(data);
 });
