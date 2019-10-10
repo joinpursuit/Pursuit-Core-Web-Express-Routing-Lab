@@ -1,0 +1,28 @@
+<Doctype!>
+    <html>
+        <head>
+            <title>Calculator API 1</title>
+             <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+            <script src="calculatorExpress.js"></script>
+        </head>
+        <body>
+            <h1>Calculator</h1>
+            <div class="main-div">
+                <div class="number">
+                    <input type="number" id="num-one">
+                    <select id="select">
+                        <option id="add" value="+"> + </option>
+                        <option id="subtract" value="-"> - </option>
+                        <option id="multiply" value="*"> * </option>
+                        <option id="divide" value="/"> / </option>
+                    </select>
+                    <input type="number" id="num-two">
+                    <span id="question-marks"> ??? </span>
+                </div>
+                <div class="btn-div">
+                    <button id="button" type="click">Operate</button>
+                </div>
+                
+            </div>
+        </body>
+    </html>
