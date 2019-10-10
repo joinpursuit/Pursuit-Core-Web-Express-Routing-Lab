@@ -30,8 +30,8 @@ app.get("/add/:num1/:num2", (request, response) => {
         num2: num2,
         result: result
     }
-    response.json(data)
-})
+    response.json(data);
+});
 
 app.get("/subtract/:num1/:num2", (request, response) => {
     let num1 = request.params.num1;
@@ -43,8 +43,8 @@ app.get("/subtract/:num1/:num2", (request, response) => {
         num2: num2,
         result: result
     }
-    response.json(data)
-})
+    response.json(data);
+});
 
 app.get("/multiply/:num1/:num2", (request, response) => {
     let num1 = request.params.num1;
@@ -56,7 +56,7 @@ app.get("/multiply/:num1/:num2", (request, response) => {
         num2: num2,
         result: result
     }
-    response.json(data)
+    response.json(data);
 })
 
 app.get("/divide/:num1/:num2", (request, response) => {
@@ -69,10 +69,15 @@ app.get("/divide/:num1/:num2", (request, response) => {
         num2: num2,
         result: result
     }
-    response.json(data)
+    response.json(data);
+})
+
+app.use("*", (request, response) => {
+    response.status(404);
+    response.send("This route was not found. Please use one of the four routes for the Calculator Api");
 })
 
 app.listen(port, () => {
-    console.log(`Server is listening on port ${port}`)
+    console.log(`Server is listening on port ${port}`);
 })
 

@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="./calculate.js"></script>
+    <script src="./calculator.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Calculator API</title>
 </head>
-<body>
-    <h1>Calculator</h1>
+    <body>
+        <h1>Calculator</h1>
 
-    <input type="number"/>
-    <select name="math" id="operations">
-        <option>+</option>
-        <option>-</option>
-        <option>*</option>
-        <option>/</option>
-    </select>
-    
-    <input type="number"/> 
+        <input type="number" id="num1"/>
+        <select name="math" id="operations">
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+            <option>/</option>
+        </select>
 
-    <input type="submit" value="Calculate"/>
-</body>
+        <input type="number" id="num2"/> 
+
+        <button>Calculate</button>
+    </body>
 </html>
