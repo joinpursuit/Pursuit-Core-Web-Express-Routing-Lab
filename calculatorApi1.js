@@ -2,14 +2,56 @@ const express = require("express");
 const server = express();
 const port = 8080;
 const cors = require("cors");
+const mathMod = require("./math_mods.js")
 
 server.use(cors());
 server.get("/", (req, res) => {
     console.log("welcome to my calculator API")
 })
 server.get("/add/:num1/:num2", (req, res) => {
-    let num1 = req.params.num1;
-    let num2 = req.params.num2;
-    let sum = num1 + num2;
+    let num1 = parseInt(req.params.num1);
+    let num2 = parseInt(req.params.num2);
+    let result = mathMod.add(num1, num2);
+    let obj = {
+        "num1": num1,
+        "num2": num2,
+        "result": result
+    }
+    res.json(obj)
 })
-server.listen(port)
+server.get("/sub/:num1/:num2", (req, res) => {
+    let num1 = parseInt(req.params.num1);
+    let num2 = parseInt(req.params.num2);
+    let result = mathMod.sub(num1, num2);
+    let obj = {
+        "num1": num1,
+        "num2": num2,
+        "result": result
+    }
+    res.json(obj);
+})
+server.get("/mul/:num1/:num2", (req, res) => {
+    let num1 = parseInt(req.params.num1);
+    let num2 = parseInt(req.params.num2);
+    let result = mathMod.mul(num1, num2);
+    let obj = {
+        "num1": num1,
+        "num2": num2,
+        "result": result
+    }
+    res.json(obj)
+})
+server.get("/div/:num1/:num2", (req, res) => {
+    let num1 = parseInt(req.params.num1);
+    let num2 = parseInt(req.params.num2);
+    let result = mathMod.div(num1, num2);
+    let obj = {
+        "num1": num1,
+        "num2": num2,
+        "result": result
+    }
+    res.json(obj)
+})
+server.listen(port, () => {
+    console.log(`Now listening to Port: ${port}`)
+})
