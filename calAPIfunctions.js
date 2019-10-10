@@ -14,7 +14,7 @@ function displayResFromServ(data){
     let serverResults = data.serverResults
     numberData(serverResults)
 }
-let num1 = response.
+
 
 // axios
 // fetch
