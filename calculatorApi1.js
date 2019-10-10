@@ -81,5 +81,5 @@ app.get('/div/:num1/:num2', (request, response)=>{
 });
 
 app.listen(port, ()=>{
-    console.log('ok.')
+    console.log('Server is running.')
 })
