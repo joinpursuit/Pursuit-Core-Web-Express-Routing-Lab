@@ -8,35 +8,32 @@ app.get("/", (request, response) => {
     response.send("This is the homepage");
 });
 
-app.get("/operand/:num1/:num2", (request, response) => {
-    let operand = operand;
+app.get("/:operand/:num1/:num2", (request, response) => {
+    //Make variables equal to the paramerers of the url
+    let operand = request.params.operand;
+    let num1 = parseInt( request.params.num1);
+    let num2 = parseInt( request.params.num2);
+    let result; //for the different operations
+
+    //Check what does operand equal to
     if(operand === "add") {
-        let result = {
-            "num1": request.params.num1, 
-            "num2": request.params.num2,
-            "result": parseInt(request.params.num1) +  parseInt(request.params.num2)
-        }
+        result = num1 + num2;
     } else if(operand === "sub") {
-        let result = {
-            "num1": request.params.num1, 
-            "num2": request.params.num2,
-            "result": parseInt(request.params.num1) -  parseInt(request.params.num2)
-        }
+        result = num1 -  num2;
     } else if(operand === "mul") {
-        let result = {
-            "num1": request.params.num1, 
-            "num2": request.params.num2,
-            "result": parseInt(request.params.num1) *  parseInt(request.params.num2)
-        }
-    } else if(operand === "sub") {
-        let result = {
-            "num1": request.params.num1, 
-            "num2": request.params.num2,
-            "result": parseInt(request.params.num1) /  parseInt(request.params.num2)
-        }
+        result = num1 *  num2;
+    } else if(operand === "div") {
+        result = num1 / num2;
     }
+
+    //Send the operand result in the JSON
+    let finalResult = {
+        "num1": num1,
+        "num2": num2,
+        "result": result
+    }
+    response.send(finalResult); //Send the JSON
     response.status(200);
-    response.send(result);
 });
 
 app.use("*", (request, response) => {

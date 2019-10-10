@@ -10,12 +10,13 @@ document.addEventListener("DOMContentLoaded", () => {
         let value1 = input1.value + ""; //adding a empty string will make value1 a string
         let value2 = input2.value + "";
         let operant = selectOption.value;
-        let mainURL = "http://localhost:8000";
+        let mainURL = "http://localhost:8001";
         let finalURL = `${mainURL}/${operant}/${value1}/${value2}`; //depending on operant, value1 and value2, it will request the url
         if(value1 !== "" && value2 !== "") {
             fetchCalculatorData(finalURL);
         }
     });
+
     input1.addEventListener("change", () =>{ //make resultPTag become a question mark when reusing the inputs or selector
         resultPTag.innerText = '???';
     });    
@@ -24,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });    
     selectOption.addEventListener("change", () =>{
         resultPTag.innerText = '???';
-    });  
+    });
 });
 
 const fetchCalculatorData = (finalURL) => {
