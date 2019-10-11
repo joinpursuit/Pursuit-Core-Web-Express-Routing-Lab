@@ -1,12 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     button = document.querySelector("button")
     button.addEventListener('click', performOperation)
-    console.log('hello');
 })
 
 
 
-async function loadDataFromServer(operation, param1, param2) {
+const loadDataFromServer = async (operation, param1, param2) => {
     const myURL = `http://localhost:8080/${operation}/${param1}/${param2}`
     const {
         data
@@ -30,10 +29,6 @@ const performOperation = async () => {
     console.log(num1);
 
     let response = await loadDataFromServer(opt, num1, num2)
-
-    // pTag.innerText = response.result
-    // document.querySelector('#answer').append(pTag)
-    // console.log(response.result);
     printToScreen(response)
 }
 
@@ -49,5 +44,4 @@ const printToScreen = (param) => {
     pTag.id = 'results'
     pTag.innerText = `= ${param.result}`
     document.querySelector('#answer').append(pTag)
-    // clearScreen()
 }
