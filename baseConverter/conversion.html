@@ -5,11 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="./conversion.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./conversion.js"></script>
+    <title>Base Conversion</title>
 </head>
 
 <body>
-
+    <h1>Base Conversion</h1>
+    <div id="container">
+        <form event.preventDefault()>
+            <input type="number" id="num">
+            <input type="text" id="textInput">
+            <div id="answer"></div>
+        </form>
+    </div>
+    <button>Calculate</button>
 </body>
 
 </html>
