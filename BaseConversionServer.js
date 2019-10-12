@@ -11,43 +11,31 @@ myApp.listen(port, () => {
 
 const handelRequest = (receivedNum, base) => {
     let conversionBase;
-    let binNum;
-    let decNum;
-    let HexNum;
+    let rightInput = 'invalid';
+    let binNum = null;
+    let decNum = null;
+    let HexNum = null;
 
     switch(base) {
         case "bin": conversionBase = 2;
-            decNum = parseInt(receivedNum, 2)
-            if (decNum) {
-                binNum = receivedNum;
-                decNum = decNum.toString(10);
-                HexNum = decNum.toString(16);
-            }
             break;
         case "dec": conversionBase = 10;
-            decNum = parseInt(receivedNum);
-            if (decNum) {
-                binNum = decNum.toString(2);
-                decNum = decNum.toString(10);
-                HexNum = decNum.toString(16);
-            }
             break;
         case "hex": conversionBase = 16;
-            decNum = parseInt(receivedNum, 16)
-            if (decNum) {
-                binNum = decNum.toString(2);
-                decNum = decNum.toString(10);
-                HexNum = receivedNum;
-            }
             break;
         default: conversionBase = "Unknown Base";
-            binNum = null
-            decNum = null;
-            HexNum = null;
             break;
     }
 
+    decNum = parseInt(receivedNum, conversionBase)
+    if (!isNaN(decNum)) {
+        rightInput = 'ok';
+    }
+    binNum = decNum.toString(2);
+    HexNum = decNum.toString(16);
+
     let data = {
+        rightInput: rightInput,
         original: { value: receivedNum, base: conversionBase },
         conversions: { decimal: decNum, binary: binNum, hexadecimal: HexNum}
     }
@@ -73,7 +61,7 @@ myApp.get('/:num', (request, response) => {
 
 myApp.get('*', (request, response) => {
     let data = {
-        conversionBase: `Interesting endpoint, unfortunately, there is nothing in here\nBESIDE THIS, YOU'RE A GENIUS, how did you get here !?!?`
+        rightInput: `Please double check your input`
     }
     response.json(data);
 })

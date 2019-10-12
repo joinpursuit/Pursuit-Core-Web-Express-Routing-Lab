@@ -50,18 +50,32 @@ document.addEventListener("DOMContentLoaded", () => {
     let inputNumber = document.querySelector("#num");
     let baseSelector = document.querySelector("#baseSelection");
     let conversionResult = document.querySelector("#conversion");
+    let convertRequest = document.querySelector("#convert")
 
-    baseSelector.addEventListener("change", async () => {
+    convertRequest.addEventListener("click", async () => {
         let value = inputNumber.value;
         let base = baseSelector.value;
         let url = `${conversionServerURL}/${value}/${base}`
 
         let response = await axios.get(url);
-        let conv = response.data
-        console.log(response.data)
+        let conv = response.data;
 
-        conversionResult.innerText = `Entered number: ${conv.original.value} on a ${conv.original.base} base
-        conversion: `
+        if (conv.rightInput === 'ok') {
+            conversionResult.innerText = `INPUT: number: ${conv.original.value}, Base: ${conv.original.base} base
+            CONVERSION ->
+            Decimal: ${conv.conversions.decimal} 
+            Binary: ${conv.conversions.binary}
+            Hexadecimal: ${conv.conversions.hexadecimal}`;
+        } else if (conv.rightInput === 'invalid') {
+            conversionResult.innerText = "Invalid input / base combination"
+        } else {
+            conversionResult.innerText = conv.rightInput;
+        }
+
+        inputNumber.value = "";
     })
 
+    baseSelector.addEventListener("change", () => {
+        conversionResult.innerText = "";
+    })
 })
