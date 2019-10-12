@@ -34,7 +34,6 @@ const clearScreen = () => {
 }
 
 const printToScreenOriginal = (param) => {
-    let originalDiv = document.createElement('div')
     let value = document.createElement('p')
     let binCon = document.createElement('p')
 
@@ -42,13 +41,10 @@ const printToScreenOriginal = (param) => {
     binCon.innerText = `Base = ${param.original.base}`
     console.log(value.innerText);
 
-    originalDiv.append(value, binCon)
-
-    document.querySelector('#answer').append(originalDiv)
+    document.querySelector('#answer').append(value, binCon)
 }
 
 const printToScreenConversion = (param) => {
-    let conversionsDiv = document.createElement('div')
     let decimal = document.createElement('p')
     let binary = document.createElement('p')
     let hexadecimal = document.createElement('p')
@@ -57,7 +53,5 @@ const printToScreenConversion = (param) => {
     binary.innerText = `Binary = ${param.conversions.binary}`
     hexadecimal.innerText = `Hexadecimal = ${param.conversions.hex}`
 
-    conversionsDiv.append(decimal, binary, hexadecimal)
-
-    document.querySelector('#answer').append(conversionsDiv)
+    document.querySelector('#answer').append(decimal, binary, hexadecimal)
 }
