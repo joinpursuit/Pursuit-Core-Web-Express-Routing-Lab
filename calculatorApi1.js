@@ -9,11 +9,9 @@ app.listen(port, () => {
     console.log('server is listen to port 3194');
 });
 
-// app.use(express.static(__dirname))
 
 app.get('/', (request, response) => {
     response.send('This is my express server homepage @ /');
-    // response.sendFile(__dirname + '/calculator.html')
 })
 
 app.get('/add/:num1/:num2', (request, response) => {
@@ -28,7 +26,7 @@ let data = {
 }
     response.json(data);
 });
-app.get('/sub/:num1/:num2', (request, response) => {
+app.get('/sub/:num1/:num2', (request, response) => {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
     let num1 = request.params.num1;
     let num2 = request.params.num2;
     let result = mathModule.sub(parseInt(num1), parseInt(num2));
@@ -70,4 +68,3 @@ app.use('*', (request, response) => {
     response.status(404);
     response.send('This was not found =( 404');
 });
-
