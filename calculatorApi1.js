@@ -15,6 +15,10 @@ myApp.get('/sum/:num1/:num2', (request, response) => {
     let num2 = parseFloat(request.params.num2);
     let result = num1 + num2;
 
+    if (isNaN(num1) || isNaN(num2)) {
+        result = "Only numbers please"
+    }
+
     let data = {
         num1: num1,
         num2: num2,
@@ -30,6 +34,10 @@ myApp.get('/sub/:num1/:num2', (request, response) => {
     let num1 = parseFloat(request.params.num1);
     let num2 = parseFloat(request.params.num2);
     let result = num1 - num2;
+
+    if (isNaN(num1) || isNaN(num2)) {
+        result = "Only numbers please"
+    }
 
     let data = {
         num1: num1,
@@ -47,6 +55,10 @@ myApp.get('/mul/:num1/:num2', (request, response) => {
     let num2 = parseFloat(request.params.num2);
     let result = num1 * num2;
 
+    if (isNaN(num1) || isNaN(num2)) {
+        result = "Only numbers please"
+    }
+
     let data = {
         num1: num1,
         num2: num2,
@@ -63,6 +75,13 @@ myApp.get('/div/:num1/:num2', (request, response) => {
     let num2 = parseFloat(request.params.num2);
     let result = num1 / num2;
 
+    if (isNaN(num1) || isNaN(num2)) {
+        result = "Only numbers please"
+    }
+    if (num2 === 0) {
+        result = "Can't divide a number by 0";
+    }
+    
     let data = {
         num1: num1,
         num2: num2,

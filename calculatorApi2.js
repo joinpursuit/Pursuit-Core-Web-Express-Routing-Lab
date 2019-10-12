@@ -16,17 +16,40 @@ myApp.get('/:operant/:num1/:num2', (request, response) => {
     let num2 = parseFloat(request.params.num2);
     let result;
 
-    switch(operant) {
-        case "sum": result = num1 + num2;
-            break;
-        case "sub": result = num1 - num2;
-            break;
-        case "mul": result = num1 * num2;
-            break;
-        case "div": result = num1 / num2;
-            break;
-        default: result = "Sorry, enable to process your operant";
-            break;
+    // switch(operant) {
+    //     case "sum": result = num1 + num2;
+    //         break;
+    //     case "sub": result = num1 - num2;
+    //         break;
+    //     case "mul": result = num1 * num2;
+    //         break;
+    //     case "div": result = num1 / num2;
+    //         if (num2 === 0) {
+    //             result = "Can't divide a number by 0";
+    //         }
+    //         break;
+    //     default: result = "Sorry, enable to process your operant";
+    //         break;
+    // }
+
+    let operations = {
+        'sum': (a, b) => a + b,
+        'sub': (a, b) => a - b,
+        'mul': (a, b) => a * b,
+        'div': (a, b) => a / b
+    }
+
+    if (operations[operant]) {
+        result = operations[operant](num1, num2);
+    } else {
+        result = "invalid operator !!"
+    }
+    
+    if (isNaN(num1) || isNaN(num2)) {
+        result = "Only numbers please";
+    }
+    if (operant === 'div' && num2 === 0) {
+        result = "Can't divide a number by 0";
     }
 
     let data = {
