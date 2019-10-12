@@ -21,6 +21,11 @@ app.get('/add/:num1/:num2', (request, response) => {
     const num1 = parseInt(request.params.num1)
     const num2 = parseInt(request.params.num2)
     let result = addTwoNums(num1, num2)
+
+    if (isNaN(num1) || isNaN(num2)) {
+        response.send("Only numbers please!")
+        return; 
+    }
     
     let data = {
         num1: num1,
@@ -42,6 +47,11 @@ app.get('/sub/:num1/:num2', (request, response) => {
     const num1 = parseInt(request.params.num1)
     const num2 = parseInt(request.params.num2)
     let result = subtractTwoNums(num1, num2)
+
+    if (isNaN(num1) || isNaN(num2)) {
+        response.send("Only numbers please!")
+        return; 
+    }
     
     let data = {
         num1: num1,
@@ -63,6 +73,11 @@ app.get('/mul/:num1/:num2', (request, response) => {
     const num1 = parseInt(request.params.num1)
     const num2 = parseInt(request.params.num2)
     let result = multiplyTwoNums(num1, num2)
+
+    if (isNaN(num1) || isNaN(num2)) {
+        response.send("Only numbers please!")
+        return; 
+    }
     
     let data = {
         num1: num1,
@@ -82,6 +97,11 @@ app.get('/div/:num1/:num2', (request, response) => {
     const num1 = parseInt(request.params.num1)
     const num2 = parseInt(request.params.num2)
     let result = divideTwoNums(num1, num2)
+    
+    if (isNaN(num1) || isNaN(num2)) {
+        response.send("Only numbers please!")
+        return; 
+    }
     
     let data = {
         num1: num1,
