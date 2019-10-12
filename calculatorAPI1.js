@@ -8,7 +8,7 @@ server.use(cors());
 server.get("/add/:num1/:num2", (request, respond) => {
 //    console.log(resquest.params)
     const add = (num1, num2) => parseInt(num1) + parseInt(num2)
-
+    
 
    let numb = {
        num1: request.params.num1,
