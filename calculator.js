@@ -1,18 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
     let button = document.querySelector("button");
-    button.addEventListener('click', displayDataFromServer);
+    button.addEventListener('click', loadDataFromServer);
 })
 
-async function loadDataFromServer() {
-    const myURL = "http:/localhost:8000/"
-    const response = await axios.get(myURL)
-    displayDataFromServer(response.data)
-}
-
-const displayDataFromServer = () => {
+const loadDataFromServer = () => {
+    let operator = document.getElementById("operations").value;
     let num1 = document.getElementById("num1").value;
     let num2 = document.getElementById("num2").value;
+    const myURL = `http:/localhost:8000/${operator}/${num1}/${num2}`
 
-    console.log(num1);
-    console.log(num2);
+    fetch(myURL).then(response => {
+        return response.json()
+    })
+    .then(result => {
+        let answer = document.getElementById("answer");
+        answer.innerText = `Answer: ${result.result}`
+        
+    })
+
 }
+
