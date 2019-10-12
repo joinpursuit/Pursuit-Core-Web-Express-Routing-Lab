@@ -1,0 +1,16 @@
+/* 
+Joseph P. Pasaoa
+Server Calculator Lab
+*/
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+input {
+  width: 250px;
+  height: 22px;
+  padding: 1px 11px;
+
+  font-size: 1.1em;
+}
