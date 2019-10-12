@@ -5,23 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=0">
        <title>Calculator </title>
         </head>
-    <script src=“https://unpkg.com/axios/dist/axios.min.js“></script>
     <script src="calAPIfunctions.js"></script>
     <body>
-        <h1> Calculator API</h1>
-            <input id="number1" type="number" ></input>
-            <br>
-            <br>
-            <br>
-            <input type='number'></input><br>
-            <select>
-                <option id ='add'>+</option>
-                <option id ='subtract'>-</option>
-                <option id ='multiply'>*</option>
-                <option id ='divide'>/</option>
+        <h1>Calculator Api</h1>
+        <form>
+            <input id = "number1" type ="input">
+             <select id = "operator">
+                <option value = "add">+</option>
+                <option value = "subtract">-</option>
+                <option value = "multiply">x</option>
+                <option value = "divide">/</option>
             </select>
-            <br>
-          
-            <button id='calculate'>Calculate</button>
+            <input id = "number2" type = "input">
+            <button id = "button">Click</button>
+            <p>Answer</p>
+            <p id = "answer"></p>
+        </form>
     </body>
 </html>

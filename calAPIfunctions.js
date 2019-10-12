@@ -1,20 +1,24 @@
-document.addEventListener('DOMContentLoaded',()=>{
-    let calculateButton = document.querySelector('#calculate')
-    calculateButton.addEventListener('click', loadDataFromServer)
+
+addEventListener("DOMContentLoaded", () =>{
+    console.log("content loaded")
+    setupButtonListener()
 })
-function calculateButton(){
-    return document.querySelector('calculate')
+const setupButtonListener = () =>{
+    const calculate = document.querySelector("form")
+    calculate.addEventListener("submit",fetchServerData)
 }
-async function loadDataFromServer(){
-    const myURL = "http://localhost:8004"
-    const resp = await axios.get(myURL)
-    numberData(response.data)
-}
-function displayResFromServ(data){
-    let serverResults = data.serverResults
-    numberData(serverResults)
-}
+function fetchServerData(event){
+    event.preventDefault();
 
-
-// axios
-// fetch
+    let operator = document.querySelector("#operator").value;
+    let number1 = document.querySelector("#number1").value;
+    let number2 = document.querySelector("#number2").value;
+    
+    let url = `http://localhost:8004/${operator}/${number1}/${number2}`
+    fetch(url).then(response => {
+        return response.json()
+    }).then(total =>{
+        let answer = document.querySelector("#answer")
+        answer.innerText = `${total.answer}`
+    })
+}
