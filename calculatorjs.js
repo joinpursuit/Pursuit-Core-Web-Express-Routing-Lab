@@ -14,12 +14,10 @@ const getResult = async () => {
     let num2 = getNum2();
     let url = `http://localhost:8080/${operationVal}/${num1}/${num2}/`;
     let dataObj = await axios.get(url).then((data)=> {return data})
-        console.log(dataObj)
         showAnswer(dataObj)
 }
 const showAnswer = (dataObj) => {
     let answer = dataObj.data.result;
-        console.log(`HERE IS THE ANSWER : ${answer}`)
     let paragraph = document.querySelector("p");
     let container = document.querySelector("#container");
     if(!paragraph) {
