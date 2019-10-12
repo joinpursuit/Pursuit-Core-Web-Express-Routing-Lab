@@ -6,7 +6,7 @@ const mathMod = require("./math_mods.js")
 
 server.use(cors());
 server.get("/", (req, res) => {
-    console.log("welcome to my calculator API")
+    console.log("Welcome to my calculator API")
 })
 server.get("/add/:num1/:num2", (req, res) => {
     let num1 = parseInt(req.params.num1);
@@ -51,6 +51,9 @@ server.get("/div/:num1/:num2", (req, res) => {
         "result": result
     }
     res.json(obj)
+})
+server.use("*", () => {
+    console.log("Hi, that function doesn't exist, as this server can only add, subtract, divide and multiply! 404!")
 })
 server.listen(port, () => {
     console.log(`Now listening to Port: ${port}`)
