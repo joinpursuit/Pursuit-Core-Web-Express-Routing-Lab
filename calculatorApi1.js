@@ -24,6 +24,10 @@ app.get("/add/:num1/:num2", (request, response) => {
     let num1 = request.params.num1;
     let num2 = request.params.num2;
     let result = add(parseInt(num1), parseInt(num2));
+    if(isNaN(num1) === isNaN(num2)) {
+        response.send("Thats not a number...");
+        return
+    }
 
     let data = {
         num1: num1,
@@ -37,6 +41,10 @@ app.get("/subtract/:num1/:num2", (request, response) => {
     let num1 = request.params.num1;
     let num2 = request.params.num2;
     let result = subtract(parseInt(num1), parseInt(num2));
+    if(isNaN(num1) === isNaN(num2)) {
+        response.send("Thats not a number...");
+        return
+    }
 
     let data = {
         num1: num1,
@@ -50,6 +58,10 @@ app.get("/multiply/:num1/:num2", (request, response) => {
     let num1 = request.params.num1;
     let num2 = request.params.num2;
     let result = multiply(parseInt(num1), parseInt(num2));
+    if(isNaN(num1) === isNaN(num2)) {
+        response.send("Thats not a number...");
+        return
+    }
 
     let data = {
         num1: num1,
@@ -63,7 +75,11 @@ app.get("/divide/:num1/:num2", (request, response) => {
     let num1 = request.params.num1;
     let num2 = request.params.num2;
     let result = divide(parseInt(num1), parseInt(num2));
-
+    if(isNaN(num1) === isNaN(num2)) {
+        response.send("Thats not a number...");
+        return
+    }
+    
     let data = {
         num1: num1,
         num2: num2,
