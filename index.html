@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+   <meta name="author" content="Joseph P. Pasaoa" />
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+   <title>Server Calculator Lab | Joseph P. Pasaoa</title>
+   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   <script src="./index.js" type="text/javascript"></script>
+   <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
+   <link href="./style.css" rel="stylesheet" />
+</head>
+<body>
+
+   <h1>Joey's Server Calculator</h1>
+
+   <form id="inputs">
+      <div>
+         <input type="text" id="numOneBox" name="numOneBox" />
+         <select id="chosenOp">
+            <option value="add">+</option>
+            <option value="sub">-</option>
+            <option value="mul">x</option>
+            <option value="div">÷</option>
+         </select>
+      </div>
+      <input type="text" id="numTwoBox" name="numTwoBox" />
+      <hr>
+      <input type="text" id="resultBox" disabled />
+
+      <div class="buffer"></div>
+
+      <div id="bonusConv">
+         <h2>Bonus DecBinHex Converter</h2>
+
+         <div id="convgrid">
+            <label><strong>Input: </strong></label>
+            <input type="text" id="convFromBox" name="convFromBox" />
+            <select id="chosenBase">
+               <option value="" disabled selected> -- original base? -- </option>
+               <option value="dec">decimal</option>
+               <option value="bin">binary</option>
+               <option value="hex">hexadecimal</option>
+            </select>
+            <label>decimal: </label>
+            <input type="text" id="toDecBox" disabled />
+            <label>binary: </label>
+            <input type="text" id="toBinBox" disabled />
+            <label>hexadec: </label>
+            <input type="text" id="toHexBox" disabled />
+         </div>
+      </div>
+
+   </form>
+   
+</body>
+</html>
