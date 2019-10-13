@@ -44,5 +44,4 @@ app.use('*', (request, response) => {
     response.status(404).send('This was not found =( 404')
 })
 
-
 app.listen(port)

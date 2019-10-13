@@ -102,7 +102,7 @@ app.get('/div/:num1/:num2', (request, response) => {
         response.send("Only numbers please!")
         return; 
     }
-    
+
     let data = {
         num1: num1,
         num2: num2,
