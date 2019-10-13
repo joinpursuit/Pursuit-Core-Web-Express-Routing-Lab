@@ -19,28 +19,28 @@ app.get("/add/:num1/:num2",(req,res) =>{
     res.json(sum)
   })
 
-  app.get("/subtract/:num1/:num2",(req,res) =>{
+  app.get("/sub/:num1/:num2",(req,res) =>{
     let number1 = req.params.num1 
     let number2 = req.params.num2 
     let result = parseInt(number1) - parseInt(number2)
-    let diff = {'num1': number1, 'num2': number2,'answer': result}
-    res.json(diff)
+    let sub = {'num1': number1, 'num2': number2,'answer': result}
+    res.json(sub)
   })
 
-  app.get("/multiply/:num1/:num2",(req,res) =>{
+  app.get("/mul/:num1/:num2",(req,res) =>{
     let number1 = req.params.num1 
     let number2 = req.params.num2 
     let result = parseInt(number1) * parseInt(number2)
-    let product = {'num1': number1, 'num2': number2,'answer': result}
-    res.json(product)
+    let mul = {'num1': number1, 'num2': number2,'answer': result}
+    res.json(mul)
   })
 
-  app.get("/divide/:num1/:num2",(req,res) =>{
+  app.get("/div/:num1/:num2",(req,res) =>{
     let number1 = req.params.num1 
     let number2 = req.params.num2 
     let result = parseInt(number1) / parseInt(number2)
-    let quotient = {'num1': number1, 'num2': number2,'answer': result}
-    res.json(quotient)
+    let div = {'num1': number1, 'num2': number2,'answer': result}
+    res.json(div)
   })
 
 app.use("/*", (req, res) =>{
