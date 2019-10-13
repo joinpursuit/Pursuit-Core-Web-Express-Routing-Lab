@@ -1,10 +1,9 @@
-document.addEventListener("DOMContentLoaded", () =>{
-    console.log("content loaded")
-    setupButtonListener()
+addEventListener("DOMContentLoaded", () =>{
+        setupButtonListener();
  })
  const setupButtonListener = () =>{
-    const calculate = document.querySelector("res-btn")
-    calculate.addEventListener("submit",fetchServerData)
+    const calculate = document.querySelector("form")
+    calculate.addEventListener("submit", fetchServerData)
  }
  const fetchServerData = (event) => {
     event.preventDefault();
