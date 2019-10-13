@@ -24,7 +24,6 @@ app.use('/', express.static(path.join(__dirname, 'public')));
 /* SERVER MAINS */
 const conv = {
   dec: (num) => {
-    log("HIT");
     return {
       decimal: num,
       binary: num.toString(2),
@@ -48,7 +47,6 @@ const conv = {
 }
 
 app.get("/bases/:num/:initBase", (req, res) => {
-    // res.send(req.params);
     if (isNaN(parseFloat(req.params.num)) || !conv[req.params.initBase]) {
       error(res);
     } else {
