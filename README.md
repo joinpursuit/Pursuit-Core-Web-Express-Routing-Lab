@@ -1,13 +1,12 @@
 # Express-Routing-Lab
 
 In this lab you will get to build a small server that can serve us as calculator for simple math operations.
-
 ## 1. Calculator API - Four Routes
 
 ### Backend
 
 In a file `calculatorApi1.js`, create and express server that works as a basic calculator API.
-
+ 
 * Create four routes/endpoints, `/add`, `/sub`, `/mul`, `/div`. Each of the routes will then accept two numbers as [route parameters](https://github.com/joinpursuit/Pursuit-Core-Web/tree/master/node/intro_to_express_and_routing#7-reading-parameters). 
 
   Here is what a route in your app would look like: `/add/:num1/:num2`
@@ -89,3 +88,4 @@ Example 2: on url `localhost:8000/11/bin` the server should return
   "conversions": { "decimal": "3", "binary": "11", "hex":" 3" }
 }
 ```
+
