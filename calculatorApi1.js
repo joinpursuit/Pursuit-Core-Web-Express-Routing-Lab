@@ -15,32 +15,32 @@ app.get("/add/:num1/:num2",(req,res) =>{
     let number1 = req.params.num1 
     let number2 = req.params.num2 
     let result = parseInt(number1) + parseInt(number2)
-    let sum = {'num1': number1, 'num2': number2,'answer': result}
-    res.json(sum)
+    let total = {'num1': number1, 'num2': number2,'answer': result}
+    res.json(total)
   })
 
   app.get("/sub/:num1/:num2",(req,res) =>{
     let number1 = req.params.num1 
     let number2 = req.params.num2 
     let result = parseInt(number1) - parseInt(number2)
-    let sub = {'num1': number1, 'num2': number2,'answer': result}
-    res.json(sub)
+    let total = {'num1': number1, 'num2': number2,'answer': result}
+    res.json(total)
   })
 
   app.get("/mul/:num1/:num2",(req,res) =>{
     let number1 = req.params.num1 
     let number2 = req.params.num2 
     let result = parseInt(number1) * parseInt(number2)
-    let mul = {'num1': number1, 'num2': number2,'answer': result}
-    res.json(mul)
+    let total = {'num1': number1, 'num2': number2,'answer': result}
+    res.json(total)
   })
 
   app.get("/div/:num1/:num2",(req,res) =>{
     let number1 = req.params.num1 
     let number2 = req.params.num2 
     let result = parseInt(number1) / parseInt(number2)
-    let div = {'num1': number1, 'num2': number2,'answer': result}
-    res.json(div)
+    let total = {'num1': number1, 'num2': number2,'answer': result}
+    res.json(total)
   })
 
 app.use("/*", (req, res) =>{
