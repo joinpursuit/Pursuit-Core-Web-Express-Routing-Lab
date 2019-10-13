@@ -22,6 +22,8 @@ app.use('/', express.static(path.join(__dirname, 'public')));
 
 
 /* SERVER MAINS */
+
+// CONVERSION SYSTEM - this app.get needs to be earlier to take priority over url param in calc app.get
 const conv = {
   dec: (num) => {
     return {
