@@ -28,6 +28,30 @@
       <input type="text" id="numTwoBox" name="numTwoBox" />
       <hr>
       <input type="text" id="resultBox" disabled />
+
+      <div class="buffer"></div>
+
+      <div id="bonusConv">
+         <h2>Bonus DecBinHex Converter</h2>
+
+         <div id="convgrid">
+            <label><strong>Input: </strong></label>
+            <input type="text" id="convFromBox" name="convFromBox" />
+            <select id="chosenBase">
+               <option value="" disabled selected> -- original base? -- </option>
+               <option value="dec">decimal</option>
+               <option value="bin">binary</option>
+               <option value="hex">hexadecimal</option>
+            </select>
+            <label>decimal: </label>
+            <input type="text" id="toDecBox" disabled />
+            <label>binary: </label>
+            <input type="text" id="toBinBox" disabled />
+            <label>hexadec: </label>
+            <input type="text" id="toHexBox" disabled />
+         </div>
+      </div>
+
    </form>
    
 </body>
