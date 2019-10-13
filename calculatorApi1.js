@@ -6,10 +6,10 @@ const port = 8000;
 
 app.use(cors());
 
-app.use(express.static(__dirname))
-app.get("/", (req, res) => {
-    res.sendFile(__dirname + '/calculator.html')
-})
+// app.use(express.static(__dirname))
+// app.get("/", (req, res) => {
+//     res.sendFile(__dirname + '/calculator.html')
+// })
 
 app.get("/add/:num1/:num2",(req,res) =>{
     let number1 = req.params.num1 
