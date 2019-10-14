@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () =>{
     let calculateButton= document.querySelector("#calculate_button")
     calculateButton.addEventListener('click',() =>{
         mathFunction()
+
+       
     })
 })
 
@@ -16,8 +18,9 @@ async function mathFunction() {
     const resp = await axios.get(myURL) 
     
     results(resp.data.result)
-    console.log(resp.data.result)
+
 }
+
 
 
 const results = (answer) =>{
