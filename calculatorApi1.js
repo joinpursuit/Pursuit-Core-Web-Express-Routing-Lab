@@ -13,19 +13,22 @@ let ops = {
 }
 
 app.get('/:op/:n1/:n2', (req, res) => {
-    if (!ops[req.params.op] || isNaN(req.params.n1) || isNaN(req.params.n2)) {
+    let operator = req.params.op;
+    let num1 = req.params.n1;
+    let num2 = req.params.n2;
+    if (!ops[operator] || isNaN(num1) || isNaN(num2)) {
         res.status(400);
         res.send(`ERROR: 
-            ${!ops[req.params.op] ? 'operation' : 'number'}: 
-            ${!ops[req.params.op] ? req.params.op : isNaN(req.params.n1) ? req.params.n1 : req.params.n2} 
+            ${!ops[operator] ? 'operation' : 'number'}: 
+            ${!ops[operator] ? operator : isNaN(num1) ? num1 : num2} 
             is NOT a valid 
-            ${!ops[req.params.op] ? 'operation' : 'number'}.`)
+            ${!ops[operator] ? 'operation' : 'number'}.`)
     } else {
         res.status(200).json({
-            number1: req.params.n1,
-            operation: req.params.op,
-            number2: req.params.n2,
-            answer: ops[req.params.op](req.params.n1, req.params.n2),
+            number1: num1,
+            operation: operator,
+            number2: num2,
+            answer: ops[operator](num1, num2),
         })
     }
 })
