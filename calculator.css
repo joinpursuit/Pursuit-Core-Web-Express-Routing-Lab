@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: bisque;
+}
+
+form {
+    display: flex;
+    /* flex-direction: row; */
+    gap: 10px;
+}
+
+.calc-field {
+    height: 20px;
+}
+
+select {
+    height: 30px;
+}
+
+p {
+    position: absolute;
+    top: 75px;
+    font-size: 20px;
+    color: purple;
+    font-weight: bold;
+}

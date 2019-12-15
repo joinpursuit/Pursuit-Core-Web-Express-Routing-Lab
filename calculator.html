@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./calculator.js"></script>
+    <link rel="stylesheet" href="calculator.css">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <h1>Calculator</h1>
+
+    <div id="container">
+        <form event.preventDefault()>
+            <input type="number" id="num1" class="calc-field">
+            <select name="operators" id="operators">
+                <option value="add">+</option>
+                <option value="sub">_</option>
+                <option value="mul">*</option>
+                <option value="div">/</option>
+            </select>
+            <input type="number" id="num2" class="calc-field">
+            <div id="answer"></div>
+        </form>
+    </div>
+    <button>Calculate</button>
+</body>
+
+</html>
