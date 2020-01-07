@@ -1,11 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
     let select = document.querySelector("select");
-    let num1 = document.querySelector("num1");
-    let num2 = document.querySelector("num2");
+    let num1 = document.querySelector("#num1");
+    let num2 = document.querySelector("#num2");
+    let form = document.querySelector("form")
+    let answer = document.querySelector("#answer")
 
-    axios.get(`http://localhost:3000/${select.value}/${num1.value}/${num2.value}`).then(res =>{
-        res.data.forEach()
-        debugger
+    form.addEventListener("submit", (e) => {
+        e.preventDefault()
+        axios.get(`http://localhost:3000/${select.value}/${num1.value}/${num2.value}`).then(res =>{
+            answer.innerText = res.data;
+        })
     })
-    }
+    
 })
