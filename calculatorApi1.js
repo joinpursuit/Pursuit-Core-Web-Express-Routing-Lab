@@ -14,11 +14,15 @@ app.get("/", (req, res) => {
 })
 
 app.get("/add/:num1/:num2", (req, res) => {
-    console.log(req.params)
-    // let n1 = req.params.num1
-    // let n2 = req.params.num2
-    // let result = add(parseInt(n1),parseInt(n2))
-    res.json(add(parseInt(req.params.num1),parseInt(req.params.num2)))
+    let n1 = req.params.num1
+    let n2 = req.params.num2
+    let result = add(parseInt(n1),parseInt(n2))
+
+    if(result === null){
+        result = req.params["numbers only"]
+    }
+    
+    res.json({"num1" : n1, "num2" : n2, "result": result})
 
 })
 
