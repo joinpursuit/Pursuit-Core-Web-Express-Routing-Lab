@@ -25,6 +25,9 @@ app.get("/", (req,res)=>{
 })
 
 app.get("/add/:num1/:num2",(req,res)=>{ 
+    // if(req.params.num1.type() === "string"){
+    //     return res.json("Numbers only")
+    // }
     res.json(add(req.params.num1,req.params.num2))
 })
 
