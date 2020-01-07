@@ -5,7 +5,8 @@ app.use(cors());
 const port = 3000;
 
 const add = (a, b) => {
-    return parseInt(a + b);
+    let sum = a + b
+    return parseInt(sum);
 }
 
 const sub = (a, b) => {
@@ -20,13 +21,14 @@ const div = (a, b) => {
     return parseInt(a / b);
 }
 
+
 app.get("/", (req, res) => {
     res.send("YOU made a get request at / url");
 })
 
 app.get("/add/:num1/:num2", (req, res) => {
     console.log(req.params.num1)
-    res.json(add(req.params.num1, req.params.num2));
+    res.json(add(parseInt(req.params.num1), parseInt(req.params.num2)));
 })
 
 app.get("/sub/:num1/:num2", (req, res) => {
