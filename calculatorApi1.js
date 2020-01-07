@@ -1,5 +1,7 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
+app.use(cors());
 const port = 3000;
 
 
@@ -17,19 +19,19 @@ const div = (num1, num2) =>{
 }
 
 app.get("/add/:num1/:num2",(req, res)=>{
-    res.json(add(Number(req.params.num1), Number(req.params.num2)));
+    res.json(add(Number.parseInt(req.params.num1), Number.parseInt(req.params.num2)));
     console.log(req.params)
 })
 app.get("/sub/:num1/:num2",(req, res)=>{
-    res.json(sub(Number(req.params.num1), Number(req.params.num2)));
+    res.json(sub(Number.parseInt(req.params.num1), Number.parseInt(req.params.num2)));
     console.log(req.params);
 })
 app.get("/mul/:num1/:num2",(req, res)=>{
-    res.json(mul(Number(req.params.num1), Number(req.params.num2)));
+    res.json(mul(Number.parseInt(req.params.num1), Number.parseInt(req.params.num2)));
     console.log(req.params)
 })
 app.get("/div/:num1/:num2",(req, res)=>{
-    res.json(div(Number(req.params.num1), Number(req.params.num2)));
+    res.json(div(Number.parseInt(req.params.num1), Number.parseInt(req.params.num2)));
     console.log(req.params)
 })
 app.get("/", (req, res) =>{

@@ -3,15 +3,18 @@ document.addEventListener("DOMContentLoaded", () => {
     let num1 = document.querySelector("#num1")
     let num2 = document.querySelector("#num2")
     let op = document.querySelector("#op")
-    let btn = document.querySelector("button")
     let form = document.querySelector("form")
+    let ans = document.querySelector("#ans")
 
-   form.addEventListener("submit", () => {
-       debugger
+
+   form.addEventListener("submit", (e) => {
+    e.preventDefault();
+       axios.get(`http://localhost:3000/${op.value}/${num1.value}/${num2.value}`).then(res =>{
+        ans.innerText = `${res.data}`;
+        
+    })
    })
 
-    // axios.get("http://localhost:3000").then(res =>{
-    //     res.data
-    // })
+    
 
 })
