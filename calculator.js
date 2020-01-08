@@ -6,7 +6,9 @@ addEventListener("DOMContentLoaded", () => {
       let num2 = document.querySelector('#num2').value;
       let resultCalculation = document.querySelector('select').value;
       res.data.forEach(calculation =>{
-        let
+        let result = document.querySelector("result")
+        result.innerText = data.result
+        console.log('calc', calculation)
       })
     })
   })
