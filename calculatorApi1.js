@@ -4,42 +4,41 @@ const app = express();
 app.use(cors());
 const port = 3000;
 
-// const add = {
-//     1: {num1:"1", num2: "2", }
-// }
-// const sub = {
-//     1: {num1:"", num2: "", results: ""}
-// }
-// const mul = {
-//     1: {num1:"", num2: "", results: ""}
-// }
-// const div = {
-//     1: {num1: "", num2: "", results: ""}
-// }
+const add = (num1, num2) => {
+    return parseInt(num1) + parseInt(num2)
+}
+
+const sub = (num1, num2) => {
+    return parseInt(num1) - parseInt(num2)
+}
+
+const mul = (num1, num2) => {
+    return parseInt(num1) * parseInt(num2)
+}
+
+const div = (num1, num2) => {
+    return parseInt(num1) / parseInt(num2)
+}
 
 app.get("/add", (req, res) => {
-    // debugger
+    res.send("You made a request at /add url")
 })
 
 app.get("/add/:num1/:num2/", (req, res) => {
-    // req.params[results] = 1
-    // console.log(req.params)
-    // console.log(req.params.num1);
-    res.json({num1: req.params.num1,result: req.params.num1 + req.params.num2})
-    // debugger
+    res.json({num1: req.params.num1, num2: req.params.num2, result: add(req.params.num1, req.params.num2)}) 
 })
 
-// app.get("/sub/:num1/:num2/", (req, res) => {
+app.get("/sub/:num1/:num2/", (req, res) => {
+    res.json({num1: req.params.num1, num2: req.params.num2, result:sub(req.params.num1, req.params.num2)})
+})
 
-// })
+app.get("/mul/:num1/:num2/", (req, res) => {
+    res.json({num1: req.params.num1, num2: req.params.num2, result:mul(req.params.num1, req.params.num2)})
+})
 
-// app.get("/mul/:num1/:num2/", (req, res) => {
-
-// })
-
-// app.get("/div/:num1/:num2/", (req, res) => {
-
-// })
+app.get("/div/:num1/:num2/", (req, res) => {
+    res.json({num1: req.params.num1, num2: req.params.num2, result:div(req.params.num1, req.params.num2)})
+})
 
 app.listen(port, () => {
     console.log("Server is running on Port " + port)
