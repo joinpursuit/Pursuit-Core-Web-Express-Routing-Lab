@@ -1,7 +1,7 @@
-addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   let button = document.querySelector("button");
   button.addEventListener("click", () =>{
-    axios.get(`http://localhost:3000/${resultCalculation}/${num1}/${num2}`).then(res => {
+    axios.get(`http://localhost:3000/`).then(res => {
       debugger
       let num1 = document.querySelector('#num1').value;
       let num2 = document.querySelector('#num2').value;
@@ -9,10 +9,11 @@ addEventListener("DOMContentLoaded", () => {
       res.data.forEach(calculation =>{
         let result = document.querySelector("result")
         result.innerText = data.result
+        //debugger
         console.log('calc', calculation)
         debugger
       })
     })
   })
 });
-startCalculation
+//startCalculation
