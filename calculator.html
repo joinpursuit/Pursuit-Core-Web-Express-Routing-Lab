@@ -5,20 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- <link rel="stylesheet" href="./calculator.css"> -->
     <script src="./calculatorApi2.js"></script>
     <title>Calculator</title>
 </head>
 <body>
     <h1>Calculator</h1>
     <form>
-    <input type="text" id="num1">
+    <input type="number" id="num1">
     <select id="select">
         <option value="add">+</option>
         <option value="sub">-</option>
         <option value="multiply">*</option>
         <option value="divide">/</option>
+        <option value="power">^</option>
     </select>
-    <input type="text" id="num2"> = </input>
+    <input type="number" id="num2"> = </input>
     <p id="answer"> ??? </p>
     <button>Calculate</button>
     </form>

@@ -17,6 +17,10 @@ const divide = (num1, num2) => {
     return num1/num2
 }
 
+const power = (num1, num2) => {
+    return Math.pow(num1, num2)
+}
+
 app.get("/add/:num1/:num2", (req, res) => {
     console.log(req.params);
     let num1 = parseInt(req.params["num1"]);
@@ -43,6 +47,13 @@ app.get("/divide/:num1/:num2", (req, res) => {
     let num1 = parseInt(req.params["num1"]);
     let num2 = parseInt(req.params["num2"]);
     res.json(divide(num1, num2));
+})
+
+app.get("/power/:num1/:num2", (req, res) => {
+    console.log(req.params);
+    let num1 = parseInt(req.params["num1"]);
+    let num2 = parseInt(req.params["num2"]);
+    res.json(power(num1, num2));
 })
 
 app.get("/", (req, res) => {

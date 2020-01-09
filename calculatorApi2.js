@@ -6,10 +6,14 @@ document.addEventListener("DOMContentLoaded", () => {
     let answer = document.querySelector("#answer")
 
     form.addEventListener("submit", (e) => {
+        try {
         e.preventDefault()
         axios.get(`http://localhost:3000/${select.value}/${num1.value}/${num2.value}`).then(res =>{
             answer.innerText = res.data;
-        })
+            })
+        } catch(err) {
+            console.log(err)
+        }
     })
     
 })

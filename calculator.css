@@ -1,0 +1,43 @@
+body{
+    display: grid;
+    background: url(https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/d9/87/b5/d987b55c-dbc6-8194-b2dc-5540c94c0671/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-85-220.png/1200x630wa.png);
+    background: cover;
+    background-repeat: no-repeat;
+    grid-template-columns: repeat(auto-fill, 220px);
+    grid-template-rows: repeat(auto-fill, 120px);
+    height: 100vh;
+    width: 100vw;
+}
+
+h1{
+    display: grid;
+    grid-column: 3;
+    grid-row: 1;
+}
+form{
+    display: grid;
+}
+#num1 {
+    display: grid;
+    grid-column: 3;
+    grid-row: 3;
+    height: 12vh;
+    width: 13.5vw;
+    font-size: 10vh;
+}
+#num2 {
+    display: grid;
+    
+    height: 12vh;
+    width: 13.5vw;
+    font-size: 10vh;
+}
+
+#select {
+    display: grid;
+    
+    height: 5vh;
+    width: 5vw;
+    font-size: 4vh;
+   
+}
