@@ -16,6 +16,7 @@ const div = (arg1,arg2) => {
     return parseInt(arg1) / parseInt(arg2)
 }
 
+
 const mult = (arg1,arg2) => {
     return parseInt(arg1) * parseInt(arg2)
 }
