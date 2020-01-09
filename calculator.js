@@ -1,19 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
-  let button = document.querySelector("button");
-  button.addEventListener("click", () =>{
-    axios.get(`http://localhost:3000/`).then(res => {
+  let form = document.querySelector("form");
+  let n1 = document.querySelector("#num1").value
+  let n2 = document.querySelector("#num2").value
+  let meth = document.querySelector("option").value
+  
+  form.addEventListener("submit", (event) => {
+    event.preventDefault()
+    axios.get(`http://localhost:3000/:${meth}/:${n1}/${n2}`).then(res => {
       debugger
-      let num1 = document.querySelector('#num1').value;
-      let num2 = document.querySelector('#num2').value;
-      let resultCalculation = document.querySelector('select').value;
-      res.data.forEach(calculation =>{
-        let result = document.querySelector("result")
-        result.innerText = data.result
-        //debugger
-        console.log('calc', calculation)
-        debugger
-      })
+    let result = document.querySelector("div")
+    // result.innerText = 
     })
   })
+
 });
-//startCalculation
