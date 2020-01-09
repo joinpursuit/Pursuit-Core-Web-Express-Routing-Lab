@@ -34,6 +34,9 @@ app.get("/div/:num1/:num2",(req, res)=>{
     res.json(div(Number.parseInt(req.params.num1), Number.parseInt(req.params.num2)));
     console.log(req.params)
 })
+app.get("/:parameter", (req, res) =>{
+    res.send("the operator is not supported");
+})
 app.get("/", (req, res) =>{
     res.send("you have requested a / at url")
 })

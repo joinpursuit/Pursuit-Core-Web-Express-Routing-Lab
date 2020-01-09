@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
        axios.get(`http://localhost:3000/${op.value}/${num1.value}/${num2.value}`).then(res =>{
         ans.innerText = `${res.data}`;
-        
     })
    })
 
