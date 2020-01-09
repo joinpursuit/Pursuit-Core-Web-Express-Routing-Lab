@@ -1,5 +1,5 @@
 {
-  "name": "Pursuit-Core-Web-Express-Routing-Lab",
+  "name": "pursuit-core-web-express-routing-lab",
   "version": "1.0.0",
   "description": "In this lab you will get to build a small server that can serve us as calculator for simple math operations.",
   "main": "calculatorApi1.js",
@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/kwong0419/Pursuit-Core-Web-Express-Routing-Lab#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1"
   }
 }
