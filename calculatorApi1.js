@@ -65,6 +65,47 @@ app.get("/divide/:num1/:num2", (req, res) => {
 
 
 
+app.get("/subtract/:num1/:num2", (req, res) => {
+    let n1 = req.params.num1
+    let n2 = req.params.num2
+    let result = subtract(parseInt(n1),parseInt(n2))
+
+    if(result === null){
+        result = req.params["numbers only"]
+    }
+    
+    res.json({"num1" : n1, "num2" : n2, "result": result})
+
+})
+
+app.get("/multiply/:num1/:num2", (req, res) => {
+    let n1 = req.params.num1
+    let n2 = req.params.num2
+    let result = multiply(parseInt(n1),parseInt(n2))
+
+    if(result === null){
+        result = req.params["numbers only"]
+    }
+    
+    res.json({"num1" : n1, "num2" : n2, "result": result})
+
+})
+
+app.get("/divide/:num1/:num2", (req, res) => {
+    let n1 = req.params.num1
+    let n2 = req.params.num2
+    let result = divide(parseInt(n1),parseInt(n2))
+
+    if(result === null){
+        result = req.params["numbers only"]
+    }
+    
+    res.json({"num1" : n1, "num2" : n2, "result": result})
+
+})
+
+
+
 app.listen(port, () => {
     console.log("Server is running on port: ", port)
 })
