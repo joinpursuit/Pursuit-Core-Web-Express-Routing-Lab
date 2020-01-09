@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   form.addEventListener("submit", (event) => {
     event.preventDefault()
-    axios.get(`http://localhost:3000/${option.value}/${n1.value}/${n2.value}`).then(res => {
+    axios.get(`http://localhost:8000/${option.value}/${n1.value}/${n2.value}`).then(res => {
       // debugger
     result.innerText = res.data.result
     })
