@@ -9,7 +9,6 @@ app.get("/add/:num1/:num2", (req, res) => {
     num1 = Number(req.params.num1)
     num2 = Number(req.params.num2)
     sum = num1+num2
-
     res.json(sum)
 })
 
@@ -31,6 +30,14 @@ app.get("/mulp/:num1/:num2", (req, res) => {
     product = num1 * num2;
 
     res.json(product)
+
+
+})
+app.get("/err", (req, res) => {
+    
+    console.log(req.params);
+    err = "numbers only"
+    res.json(err)
 
 
 })
