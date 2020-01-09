@@ -29,14 +29,26 @@ app.get('/sub/:num1/:num2', (req, res) =>{
     let n1 = req.params.num1
     let n2 = req.params.num2
     let result = parseInt(n1) - parseInt(n2)
-    res.json({"num1" :n1, "num2" : n2, "result" : result})
+
+    if(isNaN(n1) || isNaN(n2)) {
+        res.send("numbers only")
+    } else {
+        res.json({"num1" :n1, "num2" : n2, "result" : result})
+
+    }
 } )
 
 app.get('/mult/:num1/:num2', (req, res) =>{
     let n1 = req.params.num1
     let n2 = req.params.num2
     let result = parseInt(n1) * parseInt(n2)
-    res.json({"num1" :n1, "num2" : n2, "result" : result})
+   
+    if(isNaN(n1) || isNaN(n2)) {
+        res.send("numbers only")
+    } else {
+        res.json({"num1" :n1, "num2" : n2, "result" : result})
+
+    }
 } )
 
 app.get('/div/:num1/:num2', (req, res) =>{
@@ -44,6 +56,11 @@ app.get('/div/:num1/:num2', (req, res) =>{
     let n2 = req.params.num2
     let result = parseInt(n1) / parseInt(n2)
 
-    res.json({"num1" :n1, "num2" : n2, "result" : result})
+    if(isNaN(n1) || isNaN(n2)) {
+        res.send("numbers only")
+    } else {
+        res.json({"num1" :n1, "num2" : n2, "result" : result})
+
+    }
 } )
 
