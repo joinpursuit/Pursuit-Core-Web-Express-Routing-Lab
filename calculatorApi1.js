@@ -44,7 +44,7 @@ app.get("/math/add/:idOne/:idTwo", (req,res)=>{
     let numTwo = parseInt(req.params.idTwo)
     math.add["num1"] = numOne
     math.add["num2"] = numTwo
-    math.add["answer"] = numTwo + numTwo
+    math.add["answer"] = numOne + numTwo
     res.json(math.add)
 })
 
@@ -63,7 +63,7 @@ app.get("/math/sub/:idOne/:idTwo",(req,res)=>{
     let numTwo = parseInt(req.params.idTwo)
     math.sub["num1"] = numOne
     math.sub["num2"] = numTwo
-    math.sub["answer"] = numTwo - numTwo
+    math.sub["answer"] = numOne - numTwo
     res.json(math.sub)
 })
 
@@ -72,7 +72,7 @@ app.get("/math/div/:idOne/:idTwo",(req,res)=>{
     let numTwo = parseInt(req.params.idTwo)
     math.div["num1"] = numOne
     math.div["num2"] = numTwo
-    math.div["answer"] = numTwo / numTwo
+    math.div["answer"] = numOne / numTwo
     res.json(math.div)
 })
 
@@ -81,7 +81,7 @@ app.get("/math/mult/:idOne/:idTwo",(req,res)=>{
     let numTwo = parseInt(req.params.idTwo)
     math.mult["num1"] = numOne
     math.mult["num2"] = numTwo
-    math.mult["answer"] = numTwo * numTwo
+    math.mult["answer"] = numOne * numTwo
     res.json(math.sub)
 })
 
