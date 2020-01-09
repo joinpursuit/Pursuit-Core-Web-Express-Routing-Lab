@@ -26,24 +26,25 @@ app.get("/", (req,res)=>{
 })
 
 app.get("/add/:num1/:num2",(req,res)=>{ 
-    // if(req.params.num1.type() === "string"){
-    //     return res.json("Numbers only")
-    // }
+    console.log(req.params)
     res.json(add(req.params.num1,req.params.num2))
 })
 
 app.get("/mult/:num1/:num2",(req,res)=>{  
+    console.log(req.params)
     res.json(mult(req.params.num1,req.params.num2))
 })
 
 app.get("/div/:num1/:num2",(req,res)=>{
+    console.log(req.params)
     res.json(div(req.params.num1,req.params.num2))
 })
 
 app.get("/sub/:num1/:num2",(req,res)=>{ 
+    console.log(req.params)
     res.json(sub(req.params.num1,req.params.num2))
 })
 
 app.listen(port, ()=>{
-    console.log(`Server is runing on ${port}`)
+    console.log(`Server is running on ${port}`)
 })
