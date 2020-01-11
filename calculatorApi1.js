@@ -21,10 +21,6 @@ const div = (a, b) => {
 }
 
 
-app.get("/", (req, res) => {
-    res.send("YOU made a get request at / url");
-})
-
 app.get("/add/:num1/:num2", (req, res) => {
     // console.log(req.params.num1)
     if (isNaN(req.params.num1) || isNaN(req.params.num2)) {
@@ -60,6 +56,14 @@ app.get("/div/:num1/:num2", (req, res) => {
 
 app.post("/", (req, res) => {
     res.send("you made a POST request")
+})
+
+app.get("/", (req, res) => {
+    res.send("YOU made a get request at / url");
+})
+
+app.get("*", (req, res) => {
+    res.send("This is a calculator API. Start with the math operator (ie. add, sub, mul, div) you'd like to compute, followed by two numbers.")
 })
 
 app.listen(port, () => {
