@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Node Server</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="./calculatorApi2.js"></script>
+    <script src="./calculatorApi2_FrontEnd.js" async></script>
 </head>
 
 <body>
@@ -15,10 +15,10 @@
         <input type="number" id="num1">
         <select>
             <option selected disabled>Choose Your Operator</option>
-            <option>+</option>
-            <option>-</option>
-            <option>*</option>
-            <option>/</option>
+            <option value="add">+</option>
+            <option value="subtract">-</option>
+            <option value="multiply">*</option>
+            <option value="divide">/</option>
         </select>
         <input type="number" id="num2">
         <button>CALCULATE</button>
@@ -26,3 +26,5 @@
     <h2 id="result"></h2>
 </body>
 </html>
+
+
