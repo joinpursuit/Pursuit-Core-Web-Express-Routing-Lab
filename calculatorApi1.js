@@ -12,6 +12,7 @@ app.get("/:parameter", (req, res) => {
 app.get("/add/:num1/:num2", (req, res) => {
     let num1 = parseInt(req.params.num1)
     let num2 = parseInt(req.params.num2)
+    console.log(req.params)
     if (isNaN(num1) || isNaN(num2)){
         res.send("Numbers Only")
     } else {
@@ -52,4 +53,8 @@ app.get("/divide/:num1/:num2", (req, res) => {
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`)
 })
+
+
+
+
 

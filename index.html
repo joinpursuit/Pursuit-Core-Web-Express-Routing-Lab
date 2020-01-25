@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Node Server</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="./index.js"></script>
+    <script src="./calculatorApi2.js"></script>
 </head>
 
 <body>
     <h1>CALCULATOR</h1>
     <form>
-        <input type="number">
+        <input type="number" id="num1">
         <select>
             <option selected disabled>Choose Your Operator</option>
             <option>+</option>
@@ -20,9 +20,9 @@
             <option>*</option>
             <option>/</option>
         </select>
-        <input type="number">
-        <button>SUBMIT</button>
+        <input type="number" id="num2">
+        <button>CALCULATE</button>
     </form>
-    <ul></ul>
+    <h2 id="result"></h2>
 </body>
 </html>
