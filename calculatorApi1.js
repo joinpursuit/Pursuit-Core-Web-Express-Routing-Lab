@@ -17,6 +17,7 @@ app.get("/add/:num1/:num2", (req, res) => {
     nums.num2 = parseInt(nums.num2)
     nums.result = nums.num1 + nums.num2
     res.json(nums)
+    
   }
 })
 app.get("/sub/:num1/:num2", (req, res) => {
@@ -28,6 +29,7 @@ app.get("/sub/:num1/:num2", (req, res) => {
     nums.num2 = parseInt(nums.num2)
     nums.result = nums.num1 - nums.num2
     res.json(nums)
+    console.log(nums.result)
   }
   
 })
