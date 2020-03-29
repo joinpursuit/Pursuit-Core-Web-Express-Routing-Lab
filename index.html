@@ -4,24 +4,22 @@
     <title>Basic Calculator</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./calculatorApi2.js"></script>
-    <link rel="stylesheet" href="./master.css">
+    <!-- <link rel="stylesheet" href="./master.css"> -->
 
 </head>
 <body>
     <h1>Calculator</h1>
-    <div>
-        <input type="number">
-        <select name="" id="">
-            <option value="+">+</option>
-            <option value="-">-</option>
-            <option value="x">x</option>
-            <option value="/">/</option>
+    <form>
+        <input type="number" id="inputLeft">
+        <select name="" id="select">
+            <option value="add">+</option>
+            <option value="sub">-</option>
+            <option value="mul">x</option>
+            <option value="div">/</option>
         </select>
-        <input type="number">
-    </div>
-    <div>
-        <button>Calculate</button>
-    </div>
-    
+        <input type="number" id="inputRight">
+        <button type="submit">Calculate</button>
+        <p>????</p>
+    </form>
 </body>
 </html>
